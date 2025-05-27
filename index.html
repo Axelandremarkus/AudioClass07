@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clickable Sound Example</title>
+</head>
+<body style="font-family: Arial; padding: 20px;">
+
+  <h1>Class 07</h1>
+
+  <!-- Clickable word that triggers the embed when clicked -->
+  <p>
+    <a href="#" onclick="showAudio('Listening'); return false;">
+      Listening
+    </a>
+  </p>
+
+
+  <!-- Embed code for SoundCloud (each embed is hidden initially) -->
+  <div id="Listening" class="audioEmbed" style="display:none;">
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" 
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/alexandre-markus-662714240/audios-class-07&auto_play=true">
+    </iframe>
+  </div>
+
+
+  <script>
+    function showAudio(word) {
+      // Hide all audio embeds
+      var allEmbeds = document.getElementsByClassName('audioEmbed');
+      for (var i = 0; i < allEmbeds.length; i++) {
+        allEmbeds[i].style.display = 'none';
+      }
+      
+      // Show the relevant audio embed
+      var audioEmbed = document.getElementById(word);
+      if (audioEmbed) {
+        audioEmbed.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
